@@ -278,3 +278,162 @@ console.log("Even Numbers:", evenNumbers);
 ```
 
 ___
+
+# The `find()` method is used to search for an element in an array based on a condition. It returns the first element that satisfies the condition, or undefined if no element satisfies the condition.
+
+#### ***(Метод `find()` используется для поиска элемента в массиве на основе определенного условия. Он возвращает первый элемент, удовлетворяющий условию, или undefined, если ни один элемент не соответствует условию)***
+
+```
+const array1 = [5, 12, 8, 130, 44];
+
+const found = array1.find((element) => element > 10);
+
+console.log(found);
+// Expected output: 12
+
+```
+
+___
+
+## The `reduce()` method executes a reducer function (that you provide) on each element of the array, resulting in a single output value
+
+#### ***(Метод `reduce()` выполняет функцию редуктора (которую вы предоставляете) для каждого элемента массива, в результате чего получается одно выходное значение.)***
+
+```
+const array1 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array1.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue,
+);
+
+console.log(sumWithInitial);
+// Expected output: 10
+
+```
+
+___
+
+![alt text](image-3.png)
+
+![alt text](image-2.png)
+
+___
+
+## The `toSorted()` method of Array instances is the copying version of the `sort()` method. It returns a new array with the elements sorted in ascending order.
+
+#### ***(Метод `toSorted()` экземпляров Array является копирующей версией метода `sort()`. Он возвращает новый массив с элементами, отсортированными в порядке возрастания.)***
+
+```
+const months = ["Mar", "Jan", "Feb", "Dec"];
+const sortedMonths = months.toSorted();
+console.log(sortedMonths); // ['Dec', 'Feb', 'Jan', 'Mar']
+console.log(months); // ['Mar', 'Jan', 'Feb', 'Dec']
+
+const values = [1, 10, 21, 2];
+const sortedValues = values.toSorted((a, b) => a - b);
+console.log(sortedValues); // [1, 2, 10, 21]
+console.log(values); // [1, 10, 21, 2]
+
+```
+
+___
+
+## Destructuring is a feature that allows you to extract values from arrays or objects into distinct variables. Let's explore both array and object destructuring:
+## Array destructuring allows you to unpack values from arrays into variables.
+
+#### ***(Деструктуризация массива позволяет извлекать значения из массивов в отдельные переменные.)***
+
+```
+// Example:
+let numbers = [1, 2, 3];
+let [a, b, c] = numbers;
+console.log(a); // Output: 1
+console.log(b); // Output: 2
+console.log(c); // Output: 3
+
+```
+___
+
+```
+let a, b, rest;
+[a, b] = [10, 20];
+
+console.log(a);
+// Expected output: 10
+
+console.log(b);
+// Expected output: 20
+
+[a, b, ...rest] = [10, 20, 30, 40, 50];
+
+console.log(rest);
+// Expected output: Array [30, 40, 50]
+
+```
+
+___
+
+## Spread syntax can be used to create a new array by copying the elements of an existing array.
+
+#### ***(Синтаксис распространения может быть использован для создания нового массива путем копирования элементов существующего массива.)***
+
+```
+// Example:
+let numbers = [1, 2, 3];
+let newNumbers = [...numbers, 4, 5];
+console.log(newNumbers); // Output: [1, 2, 3, 4, 5]
+
+```
+
+## Spread syntax can be used to spread elements of an array as arguments to a function call.
+
+#### ***(Синтаксис распространения может быть использован для создания нового массива путем копирования элементов существующего массива.)***
+
+```
+// Example:
+function sum(x, y, z) {
+  return x + y + z;
+}
+let numbers = [1, 2, 3];
+console.log(sum(...numbers)); // Output: 6
+
+```
+
+___
+
+## The `rest` syntax in JavaScript, represented by the ellipsis `(...)`, is used to collect multiple arguments into a single array. It allows you to gather any number of function arguments into an array.
+
+#### ***(Синтаксис параметра `rest` позволяет функции принимать любое количество аргументов и сохранять их в массиве.)***
+
+```
+// Example:
+function sum(...numbers) {
+  return numbers.reduce((acc, curr) => acc + curr, 0);
+}
+
+console.log(sum(1, 2, 3, 4, 5)); // Output: 15
+
+```
+
+___
+
+## `Rest` syntax can be used with destructuring to collect remaining elements into a separate array
+
+#### ***(Синтаксис `rest` можно использовать с деструктуризацией для сбора оставшихся элементов в отдельный массив)***
+
+```
+// Example:
+let [first, ...rest] = [1, 2, 3, 4, 5];
+console.log(first); // Output: 1
+console.log(rest); // Output: [2, 3, 4, 5]
+
+```
+
+___
+
+![alt text](image-4.png)
+
+___
